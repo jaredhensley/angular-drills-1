@@ -1,9 +1,18 @@
 <html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-		<script src="app.js"></script>
-		<script src="controller.js"></script>
-		<script src="service.js"></script>
-	</body>
+
+<body ng-app="myApp" ng-controller="mainCtrl">
+  <input type="text" ng-model="searchTerm">
+  <div ng-repeat="data in datas | filter: searchTerm">
+    {{data.name}}
+    <br> {{data.email}}
+    <br> {{data.dateEmployed}}
+    <br> {{data.phone}}
+    <hr>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controller.js"></script>
+  <script src="service.js"></script>
+</body>
+
 </html>
